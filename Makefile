@@ -51,7 +51,7 @@ buildVersionLDFlag := -X github.com/diabloneo/s3-mcp/pkg/common.Version=$(BUILD_
 
 .PHONY: build
 build:
-	CGO_ENABLED=0 go build -ldflags "$(buildVersionLDFlag)" $(BUILDTAGS) -o $(BIN)/s3-mcp github.com/diabloneo/s3-mcp/cmd/s3-mcp
+	CGO_ENABLED=0 go build -trimpath -ldflags "$(buildVersionLDFlag)" $(BUILDTAGS) -o $(BIN)/s3-mcp github.com/diabloneo/s3-mcp/cmd/s3-mcp
 
 .PHONY: test
 test:
